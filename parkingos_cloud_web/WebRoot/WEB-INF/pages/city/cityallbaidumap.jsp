@@ -248,8 +248,48 @@
                       icon: myparkIcon
                   });  // 创建标注
 		 map.addOverlay(marker);   
-		 var content =  "收费员:"+data_pda_info[i].nickname+"<br>是否在位:"+ (data_pda_info[i].is_onseat == 1?"是":"否") +"<br>更新时间:"+data_pda_info[i].update_time;       // 将标注添加到地图中
+		 var content =  "收费员:"+data_pda_info[i].nickname+
+		 "<br>是否在位:"+ (data_pda_info[i].is_onseat == 1?"是":"否") +
+		 "<br>剩余泊位:"+ "56" +
+		 "<br>应收停车费:"+ "102.0" +
+		 "<br>未交停车费:"+ "4.0" +
+		 "<br>实收停车费:"+ "98.0" +
+		 "<br>更新时间:"+data_pda_info[i].update_time;       // 将标注添加到地图中
 			addClickHandler(content,marker);
+		 
+		 
+
+			var marker1 = new BMap.Marker(new BMap.Point(data_pda_info[i].longtitude+0.002,data_pda_info[i].latitude+0.002),{
+                      enableDragging: false,
+                      raiseOnDrag: true,
+                      icon: myparkIcon
+                  });  // 创建标注
+		 map.addOverlay(marker1);   
+		 var content =  "收费员:"+data_pda_info[i].nickname+"1"+
+		 "<br>是否在位:"+ (data_pda_info[i].is_onseat == 1?"是":"否") +
+		 "<br>剩余泊位:"+ "34" +
+		 "<br>应收停车费:"+ "200.0" +
+		 "<br>未交停车费:"+ "10.0" +
+		 "<br>实收停车费:"+ "190.0" +
+		 "<br>更新时间:"+data_pda_info[i].update_time;       // 将标注添加到地图中
+			addClickHandler(content,marker1);
+		 
+		 
+
+			var marker2 = new BMap.Marker(new BMap.Point(data_pda_info[i].longtitude+0.004,data_pda_info[i].latitude+0.004),{
+                      enableDragging: false,
+                      raiseOnDrag: true,
+                      icon: myparkIcon
+                  });  // 创建标注
+		 map.addOverlay(marker2);   
+		 var content =  "收费员:"+data_pda_info[i].nickname+"2"+
+		 "<br>是否在位:"+ (data_pda_info[i].is_onseat == 1?"是":"否") +
+		 "<br>剩余泊位:"+ "66" +
+		 "<br>应收停车费:"+ "66.0" +
+		 "<br>未交停车费:"+ "6.0" +
+		 "<br>实收停车费:"+ "60.0" +
+		 "<br>更新时间:"+data_pda_info[i].update_time;       // 将标注添加到地图中
+			addClickHandler(content,marker2);
 		} 
 	}
 
