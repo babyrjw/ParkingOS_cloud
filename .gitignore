@@ -1,3 +1,6 @@
 *.class
 .settings
 target
+build
+.idea
+*.keystore

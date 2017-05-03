@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 android {
     compileSdkVersion 23
-    buildToolsVersion '23.0.3'
+    buildToolsVersion '25.0.0'
 
     defaultConfig {
         applicationId "com.zhenlaidian"
@@ -18,6 +18,7 @@ android {
     }
     signingConfigs {
         release {
+            v2SigningEnabled false
             try {
                 storeFile file("./zhenlaidian.keystore")
 //                storeFile file("Z:/WORKSPACE/biz/app/zhenlaidian.keystore")
@@ -26,6 +27,22 @@ android {
                 keyAlias "zhenlaidian"
 //                keyPassword properties.getProperty("KEY_PASSWORD")
                 keyPassword "zhenlaidian500"
+            }
+            catch (ex) {
+//                ex.printStackTrace();
+                throw new InvalidUserDataException("You should define KEYSTORE_PASSWORD and KEY_PASSWORD in gradle.properties.")
+            }
+        }
+        debug {
+            v2SigningEnabled false
+            try {
+                storeFile file("./bouwatcb.keystore")
+//                storeFile file("Z:/WORKSPACE/biz/app/zhenlaidian.keystore")
+//                storePassword properties.getProperty("KEYSTORE_PASSWORD")
+                storePassword "bouwatcb"
+                keyAlias "bouwatcb"
+//                keyPassword properties.getProperty("KEY_PASSWORD")
+                keyPassword "bouwatcb"
             }
             catch (ex) {
 //                ex.printStackTrace();
@@ -50,6 +67,7 @@ android {
             // 移除无用的resource文件
             shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
         }
 
         // 这个是解决lint报错的代码

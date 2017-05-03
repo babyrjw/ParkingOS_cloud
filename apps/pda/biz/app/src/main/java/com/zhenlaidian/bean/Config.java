@@ -35,7 +35,8 @@ public class Config {
 			//戴
 			onlineurl = "http://192.168.199.153:8088/zld/";
 		}else if(url.equals("5")) {
-			onlineurl = "http://180.150.188.224:8080/zld/";
+			//onlineurl = "http://180.150.188.224:8080/zld/";
+			onlineurl = "http://123.56.195.194:4001/zld/";
 		}
 		return onlineurl;
 	}
@@ -62,7 +63,8 @@ public class Config {
 		}else if (url.equals("4")) {
 			onlinemserver = "http://192.168.199.153:8088/mserver/";
 		}else if (url.equals("5")) {
-			onlinemserver = "http://180.150.188.224:8080/mserver/";
+			//onlinemserver = "http://180.150.188.224:8080/mserver/";
+			onlinemserver = "http://123.56.195.194:5001/mserver/";
 		}
 		return onlinemserver;
 	}
