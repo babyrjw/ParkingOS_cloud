@@ -7,6 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 <meta name="renderer" content="webkit">
 <link href="favicon.ico" mce_href="favicon.ico" rel="icon">
+<script src="js/tq.form.js?0817" type="text/javascript">//±íµ¥</script>
 <title>${cloudname}</title>
 <link href="css/common.css" rel="stylesheet" type="text/css">
 <head>

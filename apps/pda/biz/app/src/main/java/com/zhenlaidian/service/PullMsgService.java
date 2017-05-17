@@ -138,7 +138,7 @@ public class PullMsgService extends Service {
         LocationClientOption option = new LocationClientOption();
         option.setLocationMode(LocationClientOption.LocationMode.Hight_Accuracy);// 设置定位模式
         option.setCoorType("bd09ll");// 返回的定位结果是百度经纬度,默认值gcj02
-        option.setScanSpan(1000*60*10);// 设置发起定位请求的间隔时间为2000ms,过于频繁，改为10分钟
+        option.setScanSpan(1000*60*1);// 设置发起定位请求的间隔时间为2000ms,过于频繁，改为10分钟
         option.setIsNeedAddress(true);// 返回的定位结果包含地址信息
         option.setOpenGps(true);
         mLocationClient.setLocOption(option);

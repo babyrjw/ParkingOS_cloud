@@ -18,6 +18,7 @@ import com.zld.pcloud_xunlang.util.HttpAsyncProxy;
 import com.zld.pcloud_xunlang.util.TimeTools;
 import com.zld.pcloud_xunlang.pojo.XunLangAttaches;
 import com.zld.pcloud_xunlang.pojo.XunLangBase;
+import com.zld.pcloud_xunlang.pojo.XunLangConfirm;
 import com.zld.pcloud_xunlang.pojo.XunLangTimeCommand;
 
 import io.netty.channel.ChannelHandlerAdapter;
@@ -35,7 +36,7 @@ public class XunLangHandler extends ChannelHandlerAdapter{
 	
 	@Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-		logger.error("channelRead:"+msg);
+		//logger.error("channelRead:"+msg);
 		XunLangBase base = (XunLangBase)msg;
 		if(base.getCommand() == Constants.UPLOAD_TIME){
 			logger.error("时间请求");
@@ -45,6 +46,12 @@ public class XunLangHandler extends ChannelHandlerAdapter{
 			Long curTime = System.currentTimeMillis()/1000;
 			for(Dici dici :sensor.getCars()){
 				String sensorID = sensor.getNid() + dici.getDiciId();
+				
+				if(dici.getFlag() == 1){
+					//十分钟传输一次地磁磁场数据，暂不处理
+					continue;
+				}
+				
 				if(dici.getStatus() == 0){
 					Map<String, String> param = new HashMap<String, String>();
 					param.put("sensornumber", sensorID);
@@ -63,11 +70,11 @@ public class XunLangHandler extends ChannelHandlerAdapter{
 				}
 			}
 			for(HeartBeat hb :sensor.getHeartBeats()){
-				int sensorId = hb.getDiciId();
+				String sensorId = hb.getDiciId();
 				int status = hb.getStatus();
 				
 				Map<String, String> param1 = new HashMap<String, String>();
-				param1.put("sensornumber", String.valueOf(sensorId));
+				param1.put("sensornumber", sensor.getNid() + hb.getDiciId());
 				param1.put("battery", "0");
 				param1.put("site_uuid", sensor.getNid());//车检器所绑定的基站唯一编号
 				//HttpAsyncProxy.post(Constants.SENSOR_HEART_URL, param, sensorHandler);

@@ -259,18 +259,21 @@ public class SyntheticTestAction extends Action {
 							ret += "[" + gps + ",\"地址:" + map.get("address")
 									+ "\",\"停车场名称:" + map.get("company_name")
 									+ "\"," + 1 + "," + emptyObject + ","
-									+ totalObject + ",\"车位数：紧张\"],";
+									+ totalObject + ",\"车位数：紧张\", "
+									+ map.get("parking_type")+"],";
 						} else {
 							ret += "[" + gps + ",\"地址:" + map.get("address")
 									+ "\",\"停车场名称:" + map.get("company_name")
 									+ "\"," + 0 + "," + emptyObject + ","
-									+ totalObject + ",\"车位数：正常\"],";
+									+ totalObject + ",\"车位数：正常\","
+									+ map.get("parking_type")+"],";
 						}
 					} else {
 						ret += "[" + gps + ",\"地址:" + map.get("address")
 								+ "\",\"停车场名称:" + map.get("company_name")
 								+ "\"," + 2 + ",\"未知\","
-								+ totalObject + ",\"车位数：正常\"],";
+								+ totalObject + ",\"车位数：正常\","
+								+ map.get("parking_type")+"],";
 					}
 
 				}
@@ -482,11 +485,18 @@ public class SyntheticTestAction extends Action {
 						" and state=? order by id desc limit 1 ", 
 						new Object[]{map.get("id"), 0}, WorkRecord.class);
 				int remain = 0;
+				int total = 0;
+				List<Map<String, Object>> berthes = null;
 				if(workRecord != null){
 					Map countMap = onlyReadService.getMap("select amount,total from remain_berth_tb where berthseg_id = ?", new Object[]{workRecord.getBerthsec_id()});
 					if(countMap != null){
 						remain = (Integer)countMap.get("total") - (Integer)countMap.get("amount"); 
+						total = (Integer)countMap.get("total");
 					}
+					ArrayList<Object> param = new ArrayList<Object>();
+					param.add(workRecord.getBerthsec_id());
+					berthes = onlyReadService.getAllMap("select cid,berthsec_name from com_park_tb left join com_berthsecs_tb on com_park_tb.berthsec_id = com_berthsecs_tb.id  where berthseg_id = ? order by cid desc", param);
+					
 				}
 				
 				Long b = TimeTools.getToDayBeginTime();
@@ -496,11 +506,18 @@ public class SyntheticTestAction extends Action {
 				str += "{\"uid\":"+map.get("id")+", \"latitude\":"+map.get("lat")+
 						",\"longtitude\":"+map.get("lon")+", \"is_onseat\":"+map.get("is_onseat")+
 						",\"nickname\":\""+map.get("nickname")+"\""+
+						",\"totalBerth\":"+total+
 						",\"remainBerth\":"+remain+
 						",\"totalFee\":"+map.get("totalFee")+
 						",\"escapeFee\":"+map.get("escapeFee")+
 						",\"allTotalFee\":"+map.get("allTotalFee")+
-						",\"update_time\":\""+ update_time +"\"},";
+						",\"update_time\":\""+ update_time +"\"" ;
+				if(berthes != null && berthes.size() > 0){
+					str += 	",\"berthsec_name\":\""+ berthes.get(0).get("berthsec_name") +"\"" +
+							",\"max_berth\":\""+ berthes.get(0).get("cid") +"\"" +
+							",\"min_berth\":\""+ berthes.get(berthes.size() - 1).get("cid") +"\"" ;
+				}
+				str += "},";
 				//str += "{\"uid\":1, \"latitude\":25.279087,\"longtitude\":110.29663, \"is_onseat\":1},";
 			}	
 		}

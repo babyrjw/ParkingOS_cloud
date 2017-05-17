@@ -13,6 +13,7 @@ public class XunLangEncoder extends MessageToByteEncoder<byte[]>{
 			throws Exception {
 		// TODO Auto-generated method stub
 		byte sign = 0x00;
+		System.out.println("后台发送数据:");
 		System.out.println(Utils.bytesToHexString(data, 0, data.length));
 		for(int i = 0 ; i < data.length; ++i){
 			if(data[i] == (byte)0x0A){

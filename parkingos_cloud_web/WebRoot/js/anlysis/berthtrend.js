@@ -107,7 +107,7 @@ function hiddlecontent(result) {
 					name : "总利用泊位数",
 					data : data1
 				}, {
-					name : "时租车利用泊位数",
+					name : "临停车利用泊位数",
 					data : data2
 				}, {
 					name : "月卡车利用泊位数",

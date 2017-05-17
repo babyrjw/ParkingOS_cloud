@@ -70,10 +70,10 @@ public class SensorServer {
 			ByteBuf buf = Unpooled.copiedBuffer(new byte[]{(byte)0xFF});
 			channel.pipeline()
 				.addLast(new DelimiterBasedFrameDecoder(8096, true, buf))
-				.addLast(new XunLangDecoder())
-				.addLast(new XunLangPOJODecoder())
 				.addLast(new XunLangEncoder())
 				.addLast(new XunLangPOJOEncoder())
+				.addLast(new XunLangDecoder())
+				.addLast(new XunLangPOJODecoder())
 				.addLast(new XunLangHandler());
 				//.addLast(sensorHandler);
 		}

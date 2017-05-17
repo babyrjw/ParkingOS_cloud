@@ -28,6 +28,7 @@ import com.zld.pojo.StatsFacadeResp;
 import com.zld.pojo.StatsReq;
 import com.zld.service.DataBaseService;
 import com.zld.service.PgOnlyReadService;
+import com.zld.utils.Constants;
 import com.zld.utils.ExecutorsUtil;
 import com.zld.utils.RequestUtil;
 import com.zld.utils.StringUtils;
@@ -66,6 +67,33 @@ public class CityIndexAction extends Action {
 			Integer draw = RequestUtil.getInteger(request, "draw", 0);
 			List<Map<String, Object>> list = pgOnlyReadService.getAll("select title,create_time,state from city_peakalert_tb where " +
 					"cityid=? and create_time>? order by create_time desc ", new Object[]{cityid, ntime - 7*24*60});
+			if(list != null && !list.isEmpty()){
+				for(Map<String, Object> map : list){
+					if(map.get("create_time") != null){
+						Long create_time = (Long)map.get("create_time");
+						map.put("ctime", TimeTools.getTime_yyyyMMdd_HHmmss(create_time*1000));
+					}
+				}
+			}
+			String ret = "{\"recordsTotal\":\""+list.size()+"\",\"draw\":\""+draw+"\",\"recordsFiltered\":\""+list.size()+"\",\"data\":[]}";
+			
+			String jsonData =StringUtils.createJson(list);
+			ret = ret.replace("[]", jsonData);
+			AjaxUtil.ajaxOutput(response, ret);
+		}else if(action.equals("collector")){
+			Long ntime = System.currentTimeMillis()/1000;
+			Integer draw = RequestUtil.getInteger(request, "draw", 0);
+			/*
+			List<Map<String, Object>> list = pgOnlyReadService.getAll("select title,create_time,state from city_peakalert_tb where " +
+					"cityid=? and create_time>? order by create_time desc ", new Object[]{cityid, ntime - 7*24*60});
+			*/
+			String sql = "SELECT ui.id, ui.nickname, ui.phone, ul.is_onseat, ul.ctime, ul.lat, ul.lon,ul.ctime"+ 
+					" from user_info_tb as ui left join org_group_tb as og on ui.groupid = og.id left join user_local_tb as ul on ui.id = ul.uid"+
+					" where og.cityid = ? and ui.auth_flag = "+Constants.AUTH_FLAG_COLLECTOR+
+					" and ul.is_onseat = 0 and (ul.ctime = (select max(ult.ctime) from user_local_tb as ult where ult.uid = ui.id) or ul.ctime is null)";
+			
+			List<Map<String, Object>> list = pgOnlyReadService.getAll(sql, new Object[]{cityid});
+			
 			if(list != null && !list.isEmpty()){
 				for(Map<String, Object> map : list){
 					if(map.get("create_time") != null){
