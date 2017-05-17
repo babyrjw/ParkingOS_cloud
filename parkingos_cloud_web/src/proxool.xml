@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <proxool-config>
   
-  <proxool>
+<!--   <proxool>
 		<alias>dbconfig</alias>
 		<driver-url>jdbc:postgresql://127.0.0.1:5433/zldetc</driver-url>
 		<driver-class>org.postgresql.Driver</driver-class>
@@ -23,6 +23,36 @@
 		<driver-properties>
 			<property name="user" value="postgres" />
 			<property name="password" value="postgres" />
+		</driver-properties>
+		<maximum-connection-count>100</maximum-connection-count>
+		<minimum-connection-count>10</minimum-connection-count>
+		<simultaneous-build-throttle>80</simultaneous-build-throttle>
+		<house-keeping-sleep-time>90000</house-keeping-sleep-time>
+		<house-keeping-test-sql>select current_date</house-keeping-test-sql>
+		<maximum-active-time>60000</maximum-active-time>
+	</proxool> -->
+	<proxool>
+		<alias>dbconfig</alias>
+		<driver-url>jdbc:postgresql://123.56.195.194:5432/zldetc</driver-url>
+		<driver-class>org.postgresql.Driver</driver-class>
+		<driver-properties>
+			<property name="user" value="postgres" />
+			<property name="password" value="0AKlQMmG6nDMkbdC" />
+		</driver-properties>
+		<maximum-connection-count>100</maximum-connection-count>
+		<minimum-connection-count>10</minimum-connection-count>
+		<simultaneous-build-throttle>40</simultaneous-build-throttle>
+		<house-keeping-sleep-time>90000</house-keeping-sleep-time>
+		<house-keeping-test-sql>select current_date</house-keeping-test-sql>
+		<maximum-active-time>60000</maximum-active-time>
+	</proxool>
+ 	<proxool>
+		<alias>onlyread</alias>
+		<driver-url>jdbc:postgresql://123.56.195.194:5432/zldetc</driver-url>
+		<driver-class>org.postgresql.Driver</driver-class>
+		<driver-properties>
+			<property name="user" value="postgres" />
+			<property name="password" value="0AKlQMmG6nDMkbdC" />
 		</driver-properties>
 		<maximum-connection-count>100</maximum-connection-count>
 		<minimum-connection-count>10</minimum-connection-count>

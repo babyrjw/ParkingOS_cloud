@@ -51,7 +51,7 @@ public class SensorCar extends XunLangBase{
 		//1 到達 0 離開
 		private int status;
 		private int diciId;
-		private int flag;
+		private int flag;  //0是正常， 1表示十分钟传输一次地磁磁场数据
 		private int day;
 		private int hour;
 		private int minite;
@@ -97,8 +97,8 @@ public class SensorCar extends XunLangBase{
 		public void setStatus(int status) {
 			this.status = status;
 		}
-		public int getDiciId() {
-			return diciId;
+		public String getDiciId() {
+			return String.format("%1$02d", diciId);
 		}
 		public void setDiciId(int diciId) {
 			this.diciId = diciId;
@@ -177,8 +177,8 @@ public class SensorCar extends XunLangBase{
 		public void setStatus(int status) {
 			this.status = status;
 		}
-		public int getDiciId() {
-			return diciId;
+		public String getDiciId() {
+			return String.format("%1$02d", diciId);
 		}
 		public void setDiciId(int diciId) {
 			this.diciId = diciId;

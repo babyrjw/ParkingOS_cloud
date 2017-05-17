@@ -86,7 +86,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 </div>
                                 <div class="details">
                                     <div class="number">
-                                        <span data-counter="counterup" data-value="${income}"></span><span style="font-size:14px;">&nbsp;元</span>
+                                        <span data-value="${income}">${income}</span><span style="font-size:14px;">&nbsp;元</span>
                                     </div>
                                     <div class="desc"> 今日停车费收入 </div>
                                 </div>
@@ -335,6 +335,31 @@ License: You must have a valid license purchased only from themeforest(the above
                             </div>
                         </div>
                     </div>
+                    
+                    <div class="row">
+                    	
+                        <div class="col-md-4 col-sm-2">
+			                 <div class="portlet light bordered">
+			                     <div class="portlet-title">
+			                         <div class="caption font-dark">
+			                             <i class="icon-settings font-dark"></i>
+			                             <span class="caption-subject bold uppercase">收费员管理</span>
+			                         </div>
+			                     </div>
+			                     <div class="portlet-body table-both-scroll">
+			                     	<div style="height:300px;">
+				                     	<div id="collector_loading">
+	                                        <img src="images/metronic/img/loading.gif" alt="loading" /> 
+	                                    </div>
+				                         <table class="table table-striped table-bordered table-hover order-column datatable-top-border" id="collector">
+				                             <tbody>
+				                             </tbody>
+				                         </table>
+			                         </div>
+			                     </div>
+			                 </div>
+                        </div>
+                    </div>
                     <!-- END PAGE BASE CONTENT -->
                 </div>
                 <!-- END CONTENT BODY -->
@@ -363,6 +388,7 @@ License: You must have a valid license purchased only from themeforest(the above
 	    <script src="js/metronic/page_plugin/datatables.bootstrap.js" type="text/javascript"></script>
 	    <script src="js/metronic/page_plugin/bootstrap-datepicker.js" type="text/javascript"></script>
 	    <script src="js/metronic/page_scripts/alert.js" type="text/javascript"></script>
+		<script src="js/metronic/page_scripts/collector_on_seat.js" type="text/javascript"></script>
 	    <!-- datatable.ajaxtable--END PAGE LEVEL PLUGINS -->
         <!-- BEGIN PAGE LEVEL PLUGINS -->
 	    <script src="js/metronic/page_plugin/moment.min.js" type="text/javascript"></script>

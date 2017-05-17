@@ -58,6 +58,8 @@
         <a  href=""  id="table">列表</a>
         <a href="berthtimeanlysis.do?action=echarts" id="icon"  >图表</a>
         </div>
+        <iframe src="" id ="exportiframe" frameborder="0" style="width:0px;height:0px;"></iframe>
+        
         <form action="" method="get">
           <div class="an">
             
@@ -78,6 +80,7 @@
         });
         
 var btime="${btime}";
+var etime="${etime}";
 //var etime="${etime}";
 var _mediaField = [
 		{fieldcnname:"车场编号",fieldname:"comid",inputtype:"text", twidth:"100" ,issort:false},
@@ -101,12 +104,18 @@ var _berthtimeanlysisT = new TQTable({
 	fit:[true,true,true],
 	tableitems:_mediaField,
 	allowpage:false,
+	buttons:getAuthButtons(),
 	isoperate:getAuthIsoperateButtons()
 });
 
 function coutomsearch(){
-	var html = "&nbsp;&nbsp; 时间：<input id='coutom_btime' value='"+btime+"' style='width:70px' onClick=\"WdatePicker({dateFmt:'yyyy-MM-dd',startDate:'%y-%M-01',alwaysUseStartDate:true});\"/>"+
-				"&nbsp;&nbsp;<input type='button' onclick='searchdata();' value=' 查 询 '/>";
+	/* var html = "&nbsp;&nbsp; 时间：<input id='coutom_btime' value='"+btime+"' style='width:70px' onClick=\"WdatePicker({dateFmt:'yyyy-MM-dd',startDate:'%y-%M-01',alwaysUseStartDate:true});\"/>"+
+				"&nbsp;&nbsp;<input type='button' onclick='searchdata();' value=' 查 询 '/>"; */
+	var html = "&nbsp;&nbsp;&nbsp;&nbsp;时间：&nbsp;&nbsp;<input id='coutom_btime' class='Wdate' align='absmiddle' readonly value='"+btime+"' style='width:150px' onClick=\"WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',startDate:'%y-%M-%d 00:00:00',alwaysUseStartDate:false});\"/>"
+				+" - <input id='coutom_etime' class='Wdate' align='absmiddle' readonly value='"+etime+"' style='width:150px' onClick=\"WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',startDate:'%y-%M-%d 23:59:59',alwaysUseStartDate:false});\"/>"
+				+ "&nbsp;&nbsp;<input type='button' onclick='searchdata();' value=' 查 询 '/>";
+				return html;
+				
 	return html;
 }
 
@@ -124,7 +133,16 @@ function searchdata(){
 
    
 }
-
+function getAuthButtons(){
+	var bts=[];
+	//if(subauth[0])
+		bts.push({dname:"导出报表",icon:"toxls.gif",onpress:function(Obj){
+			btime = T("#coutom_btime").value;
+			T("#exportiframe").src="berthtimeanlysis.do?action=export&btime="+btime;
+			T.loadTip(1,"正在导出，请稍候...",2,"");
+		}});
+	return bts;
+}
 function getAuthIsoperateButtons(){
 	var bts = [];
 	if(bts.length <= 0){return false;}

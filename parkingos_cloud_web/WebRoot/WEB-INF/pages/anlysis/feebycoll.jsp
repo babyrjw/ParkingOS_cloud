@@ -32,6 +32,12 @@ var ownsubauth=authlist.split(",");
 for(var i=0;i<ownsubauth.length;i++){
 	subauth[ownsubauth[i]]=true;
 }
+
+var _exportField = [
+		{fieldcnname:"账号",fieldname:"id",inputtype:"text",twidth:"80",issort:false },
+		{fieldcnname:"姓名",fieldname:"nickname",inputtype:"text",twidth:"150",issort:false },
+		{fieldcnname:"备注",fieldname:"resume",inputtype:"text",twidth:"150",issort:false }
+		];
 //查看,添加,编辑,删除
 /*权限*/
 var _mediaField =[
@@ -136,6 +142,28 @@ function getAuthButtons(){
 				}
 			})
 		
+		}});
+		bts.push({dname:"导出报表",icon:"toxls.gif",onpress:function(Obj){
+			Twin({Id:"parklogs_export_w",Title:"导出报表<font style='color:red;'>（如果没有设置，默认全部导出!）</font>",Width:480,sysfun:function(tObj){
+					 TSform ({
+						formname: "parklogs_export_f",
+						formObj:tObj,
+						formWinId:"parklogs_export_w",
+						formFunId:tObj,
+						dbuttonname:["确认导出"],
+						formAttr:[{
+							formitems:[{kindname:"",kinditemts:_exportField}],
+						}],
+						//formitems:[{kindname:"",kinditemts:_excelField}],
+						SubAction:
+						function(callback,formName){
+							T("#exportiframe").src="feebycoll.do?action=export&fieldsstr=id__nickname__resume&"+Serializ(formName)
+							TwinC("parklogs_export_w");
+							T.loadTip(1,"正在导出，请稍候...",2,"");
+						}
+					});	
+				}
+			})
 		}});
 	return bts;
 }

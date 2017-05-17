@@ -57,14 +57,22 @@
      <bean name="memcachedClientBuilder" class="net.rubyeye.xmemcached.XMemcachedClientBuilder">
 		<constructor-arg>
 			 <list>
-				<bean class="java.net.InetSocketAddress">
+			 	<bean class="java.net.InetSocketAddress">
+					 <constructor-arg>
+						<value>10.47.213.187</value>
+					</constructor-arg>
+					<constructor-arg>
+						<value>11211</value>
+					</constructor-arg>
+				</bean> 
+				<!-- <bean class="java.net.InetSocketAddress">
 					 <constructor-arg>
 						<value>memcached.tq.cn</value>
 					</constructor-arg>
 					<constructor-arg>
 						<value>11211</value>
 					</constructor-arg>
-				</bean> 
+				</bean>  -->
 				<!--  <bean class="java.net.InetSocketAddress">  
                     <constructor-arg>  
                         <value>zlddb.tq.cn</value>  

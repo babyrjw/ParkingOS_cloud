@@ -25,13 +25,17 @@ public class XunLangDecoder extends ByteToMessageDecoder{
 		}
 		try{
 			byte[] data = new byte[buf.readableBytes()];
+			byte[] source = new byte[buf.readableBytes()];
 			int index = 0 ;
+			int source_index = 0;
 			byte sign = 0x00;
 			while(buf.readableBytes() > 0){
 				byte b = buf.readByte();
+				source[source_index++] = b;
 				if(b == (byte)0xFE){
 					sign = (byte)(sign ^ 0xFE);
 					b = buf.readByte();
+					source[source_index++] = b;
 					if(b == (byte)0x00){
 						b = (byte)0xFE;
 						sign = (byte)(sign ^ 0x00);
@@ -55,7 +59,7 @@ public class XunLangDecoder extends ByteToMessageDecoder{
 				logger.error("Protocol Error:Sign Error");
 				//throw new Exception("Protocol Error:Sign Error");
 			}
-			logger.info(Utils.bytesToHexString(data, 0, data.length));
+			logger.info(Utils.bytesToHexString(source, 0, source.length));
 		}catch(Exception e){
 			e.printStackTrace();
 		}finally{

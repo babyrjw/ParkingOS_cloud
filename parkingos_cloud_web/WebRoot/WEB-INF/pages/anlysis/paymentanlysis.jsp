@@ -84,7 +84,7 @@ var groups = eval(T.A.sendData("getdata.do?action=getgroups&cityid=${cityid}"));
 var _mediaField = [
 		{fieldcnname:"车场编号",fieldname:"comid",inputtype:"text", twidth:"100" ,issort:false},
 		{fieldcnname:"停车场",fieldname:"company_name",inputtype:"text", twidth:"200",issort:false},
-		{fieldcnname:"总未缴金额",fieldname:"nopayment",inputtype:"number", twidth:"200",issort:false},
+		{fieldcnname:"历史未缴金额",fieldname:"nopayment",inputtype:"number", twidth:"200",issort:false},
 		{fieldcnname:"已追缴金额",fieldname:"payment",inputtype:"number", twidth:"200",issort:false},
 		{fieldcnname:"追缴占比(%)",fieldname:"percent",inputtype:"number", twidth:"200",issort:false}
 		];

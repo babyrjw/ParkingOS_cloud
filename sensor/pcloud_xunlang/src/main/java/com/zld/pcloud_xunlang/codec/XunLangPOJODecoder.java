@@ -114,7 +114,12 @@ public class XunLangPOJODecoder extends MessageToMessageDecoder<byte[]>{
 				heartBeatList.add(hb);
 			}
 			list.add(sc);
-			System.out.print("传输器地磁数据:"+sc);
+			if(heartBeatList.size() > 0){
+				System.out.print("传输器心跳数据:"+sc);
+			}else{
+				System.out.print("传输器进出车数据:"+sc);
+			}
+			
 			ctx.writeAndFlush(XunLangConfirm.getOkConfirm(sc));
 		}else if(command == (byte)0xA0){
 			//传输器启动
