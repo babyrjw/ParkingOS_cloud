@@ -59,7 +59,7 @@ public class BerthtimeAnlysisAction extends Action {
 		}else if(action.equals("query")){
 			SimpleDateFormat df2 = new SimpleDateFormat("yyyy-MM-dd");
 			String nowtime= df2.format(System.currentTimeMillis());
-			String sql = "select c.comid,c.company_name,c.total_time,c.stay_time,round((c.stay_time/(c.stay_time+c.total_time))*100,2) as percent,round(c.stay_time/((c.total_time)/24),2) as berthavghour,round ((c.stay_time/count),2) caravghour from (select a.comid,b.company_name,count(a.id ) as count,b.parking_total*24 as total_time,sum((a.end_time-a.create_time)/60/60) as " +
+			String sql = "select c.comid,c.company_name,c.total_time,c.stay_time,round((c.stay_time/(c.stay_time+c.total_time))*100,2) as percent,round(c.stay_time/((c.total_time)/12),2) as berthavghour,round ((c.stay_time/count),2) caravghour from (select a.comid,b.company_name,count(a.id ) as count,b.parking_total*12 as total_time,sum((a.end_time-a.create_time)/60/60) as " +
 					"stay_time from order_tb as a left join com_info_tb as b on a.comid=b.id where a.end_time between ? and ? group by a.comid,b.company_name,total_time) as c  where ";
 //			String sql = "	select round(c.payment/(c.payment+c.nopayment)*100,2) as percent ,c.company_name as company_name,c.comid as comid ,c.nopayment as nopayment ,c.payment as payment  from ( select sum( case when a.state=1 then a.total  else 0 end) " +
 //			" as payment,sum( case when a.state=0 then a.total  else 0 end)   as nopayment,comid ,company_name" +
@@ -114,7 +114,7 @@ public class BerthtimeAnlysisAction extends Action {
 		}else if(action.equals("export")){
 			SimpleDateFormat df2 = new SimpleDateFormat("yyyy-MM-dd");
 			String nowtime= df2.format(System.currentTimeMillis());
-			String sql = "select c.comid,c.company_name,c.total_time,c.stay_time,round((c.stay_time/(c.stay_time+c.total_time))*100,2) as percent,round(c.stay_time/((c.total_time)/24),2) as berthavghour,round ((c.stay_time/count),2) caravghour from (select a.comid,b.company_name,count(a.id ) as count,b.parking_total*24 as total_time,sum((a.end_time-a.create_time)/60/60) as " +
+			String sql = "select c.comid,c.company_name,c.total_time,c.stay_time,round((c.stay_time/(c.stay_time+c.total_time))*100,2) as percent,round(c.stay_time/((c.total_time)/12),2) as berthavghour,round ((c.stay_time/count),2) caravghour from (select a.comid,b.company_name,count(a.id ) as count,b.parking_total*12 as total_time,sum((a.end_time-a.create_time)/60/60) as " +
 					"stay_time from order_tb as a left join com_info_tb as b on a.comid=b.id where a.end_time between ? and ? group by a.comid,b.company_name,total_time) as c  where ";
 //			String sql = "	select round(c.payment/(c.payment+c.nopayment)*100,2) as percent ,c.company_name as company_name,c.comid as comid ,c.nopayment as nopayment ,c.payment as payment  from ( select sum( case when a.state=1 then a.total  else 0 end) " +
 //			" as payment,sum( case when a.state=0 then a.total  else 0 end)   as nopayment,comid ,company_name" +
@@ -171,7 +171,7 @@ public class BerthtimeAnlysisAction extends Action {
 		else if(action.equals("echarts")){
 			SimpleDateFormat df2 = new SimpleDateFormat("yyyy-MM-dd");
 			String nowtime= df2.format(System.currentTimeMillis());
-			String sql = "select c.comid,c.company_name,c.total_time,c.stay_time,round((c.stay_time/(c.stay_time+c.total_time))*100,2) as percent from (select a.comid,b.company_name,b.parking_total*24 as total_time,sum((a.end_time-a.create_time)/60/60) as " +
+			String sql = "select c.comid,c.company_name,c.total_time,c.stay_time,round((c.stay_time/(c.stay_time+c.total_time))*100,2) as percent from (select a.comid,b.company_name,b.parking_total*12 as total_time,sum((a.end_time-a.create_time)/60/60) as " +
 					"stay_time from order_tb as a left join com_info_tb as b on a.comid=b.id where a.end_time between ? and ? group by a.comid,b.company_name,total_time) as c  where ";
 			String fieldsstr = RequestUtil.processParams(request, "fieldsstr");
 			List<Map<String, Object>> list = null;

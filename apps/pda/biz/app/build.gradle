@@ -5,7 +5,7 @@ android {
 
     defaultConfig {
         applicationId "com.zhenlaidian"
-        minSdkVersion 14
+        minSdkVersion 21
         targetSdkVersion 23
         versionCode 1410
         versionName "1.4.1"
@@ -33,7 +33,7 @@ android {
                 throw new InvalidUserDataException("You should define KEYSTORE_PASSWORD and KEY_PASSWORD in gradle.properties.")
             }
         }
-        debug {
+        /*debug {
             v2SigningEnabled false
             try {
                 storeFile file("./bouwatcb.keystore")
@@ -48,12 +48,28 @@ android {
 //                ex.printStackTrace();
                 throw new InvalidUserDataException("You should define KEYSTORE_PASSWORD and KEY_PASSWORD in gradle.properties.")
             }
+        }*/
+        debug {
+            v2SigningEnabled false
+            try {
+                storeFile file("./zhenlaidian.keystore")
+//                storeFile file("Z:/WORKSPACE/biz/app/zhenlaidian.keystore")
+//                storePassword properties.getProperty("KEYSTORE_PASSWORD")
+                storePassword "zhenlaidian500"
+                keyAlias "zhenlaidian"
+//                keyPassword properties.getProperty("KEY_PASSWORD")
+                keyPassword "zhenlaidian500"
+            }
+            catch (ex) {
+//                ex.printStackTrace();
+                throw new InvalidUserDataException("You should define KEYSTORE_PASSWORD and KEY_PASSWORD in gradle.properties.")
+            }
         }
     }
     buildTypes {
         debug {
             minifyEnabled false
-            signingConfig signingConfigs.release
+            signingConfig signingConfigs.debug
         }
 
         release {
