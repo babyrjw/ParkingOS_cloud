@@ -29,7 +29,7 @@ public class AlipayConfig {
 	
 	 /** 服务窗appId  */
     //TODO !!!! 注：该appId必须设为开发者自己的服务窗id  这里只是个测试id
-    public static final String APP_ID =PayConfigDefind.getValue("APP_ID")
+    public static final String APP_ID =PayConfigDefind.getValue("APP_ID");
     
 	
 	/**支付宝网关*/
@@ -44,5 +44,7 @@ public class AlipayConfig {
 	
 	// 签名方式 不需修改
 	public static String sign_type =PayConfigDefind.getValue("SIGN_TYPE");
-
+	
+	public static String private_key  =PayConfigDefind.getValue("PRIVATE_KEY");
+	
 }

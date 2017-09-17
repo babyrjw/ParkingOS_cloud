@@ -12,12 +12,39 @@
     </item>
     <item
         is-multidex="false"
+        jar="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\libs\ShareSDK-Wechat-Moments-2.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="58cc538afcaea68397481e5447836e62797551cc">
+        <dex dex="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\build\intermediates\pre-dexed\debug\ShareSDK-Wechat-Moments-2.6.0_36b7612fc7ada86717fa3b742a8ccc9d6c7297d8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\libs\SerialPort.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d35646626f10d99dd92e54f070b77cd13bfbfa53">
+        <dex dex="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\build\intermediates\pre-dexed\debug\SerialPort_cef3151f0934ad6e6a5358c0a03fde51201045d5.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\libs\ShareSDK-Wechat-Core-2.6.0.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="026345fd0ea8105f21cd9688849f1301232eecf9">
         <dex dex="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\build\intermediates\pre-dexed\debug\ShareSDK-Wechat-Core-2.6.0_21f1fe5dd3c462fc35ed613266c83397bdbf98d2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\libs\universal-image-loader-1.9.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9e025bc5b84968e7d6ac765e660a70b3e5a87432">
+        <dex dex="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\build\intermediates\pre-dexed\debug\universal-image-loader-1.9.2_68df9fa63541e075b11ae778f92591a610b8d203.jar" />
     </item>
     <item
         is-multidex="false"
@@ -39,6 +66,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\libs\MobTools.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b2cba35ceab382729de67845f613556d38a32133">
+        <dex dex="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\build\intermediates\pre-dexed\debug\MobTools_39592d717a4ad771aa3347ad884fa2be39e65d77.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\libs\ksoap2-android-assembly-2.4-jar-with-dependencies.jar"
         jumboMode="false"
         optimize="true"
@@ -57,6 +93,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\libs\Sunflower.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4bb0ed8cdcb9eedea6f8bf840da998dc0f4076b2">
+        <dex dex="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\build\intermediates\pre-dexed\debug\Sunflower_305ef1d33803795f23bb71c2e8422f89a004a8b5.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\android-support-v7-appcompat\build\intermediates\bundles\default\classes.jar"
         jumboMode="false"
         optimize="true"
@@ -72,87 +117,6 @@
         revision="25.0.0"
         sha1="cf2c3bf4e7a4f2856d61676e378909ec761c402f">
         <dex dex="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\build\intermediates\pre-dexed\debug\qrforandroid_955e9aa507e8bf9d9a5be5423191a6ac4952b071.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\libs\PrinterLib.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="e455601a9d0ba804278f5fed545832b1aacb45c0">
-        <dex dex="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\build\intermediates\pre-dexed\debug\PrinterLib_6527cc5a1cd5747021c24b6f8bcc75c6c3a89854.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\libs\android_auth.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="01a85bf6e949ed9f9b0fb013fd64bc725a152ca5">
-        <dex dex="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\build\intermediates\pre-dexed\debug\android_auth_246d4b303903e904de436e687cf7161416592fe0.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\libs\CountPrice.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="b479396728ff34e432a674f0c7a15fd9753fe3c5">
-        <dex dex="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\build\intermediates\pre-dexed\debug\CountPrice_07b7d1aae9b94c5f4afc2df672d48f28613a2453.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\libs\plate_id_sdk.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="952fec34b7da126dc71086900e8c8bcf7db20022">
-        <dex dex="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\build\intermediates\pre-dexed\debug\plate_id_sdk_535df3128019cdddb50f7e9bc04b6aa6c9ed2337.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\libs\ShareSDK-Wechat-Moments-2.6.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="58cc538afcaea68397481e5447836e62797551cc">
-        <dex dex="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\build\intermediates\pre-dexed\debug\ShareSDK-Wechat-Moments-2.6.0_36b7612fc7ada86717fa3b742a8ccc9d6c7297d8.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\libs\SerialPort.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="d35646626f10d99dd92e54f070b77cd13bfbfa53">
-        <dex dex="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\build\intermediates\pre-dexed\debug\SerialPort_cef3151f0934ad6e6a5358c0a03fde51201045d5.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\libs\universal-image-loader-1.9.2.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="9e025bc5b84968e7d6ac765e660a70b3e5a87432">
-        <dex dex="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\build\intermediates\pre-dexed\debug\universal-image-loader-1.9.2_68df9fa63541e075b11ae778f92591a610b8d203.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\libs\MobTools.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="b2cba35ceab382729de67845f613556d38a32133">
-        <dex dex="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\build\intermediates\pre-dexed\debug\MobTools_39592d717a4ad771aa3347ad884fa2be39e65d77.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\libs\Sunflower.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="4bb0ed8cdcb9eedea6f8bf840da998dc0f4076b2">
-        <dex dex="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\build\intermediates\pre-dexed\debug\Sunflower_305ef1d33803795f23bb71c2e8422f89a004a8b5.jar" />
     </item>
     <item
         is-multidex="false"
@@ -201,6 +165,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\libs\PrinterLib.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e455601a9d0ba804278f5fed545832b1aacb45c0">
+        <dex dex="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\build\intermediates\pre-dexed\debug\PrinterLib_6527cc5a1cd5747021c24b6f8bcc75c6c3a89854.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\libs\platform_sdk_v2.3.706.jar"
         jumboMode="false"
         optimize="true"
@@ -219,6 +192,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\libs\android_auth.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="01a85bf6e949ed9f9b0fb013fd64bc725a152ca5">
+        <dex dex="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\build\intermediates\pre-dexed\debug\android_auth_246d4b303903e904de436e687cf7161416592fe0.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\libs\android-query-full.0.26.8.jar"
         jumboMode="false"
         optimize="true"
@@ -228,12 +210,30 @@
     </item>
     <item
         is-multidex="false"
+        jar="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\libs\CountPrice.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b479396728ff34e432a674f0c7a15fd9753fe3c5">
+        <dex dex="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\build\intermediates\pre-dexed\debug\CountPrice_07b7d1aae9b94c5f4afc2df672d48f28613a2453.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\libs\rskapi.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="dabd99d6ca872ef7bd07f4a8ab1c5fea03789d17">
         <dex dex="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\build\intermediates\pre-dexed\debug\rskapi_fb6ef68cd0aeaa5c9a26d0109ba6332354911e33.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\libs\plate_id_sdk.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="952fec34b7da126dc71086900e8c8bcf7db20022">
+        <dex dex="D:\WorkspaceJava\ParkingOS_Cloud_fork\ParkingOS_cloud\apps\pda\biz\app\build\intermediates\pre-dexed\debug\plate_id_sdk_535df3128019cdddb50f7e9bc04b6aa6c9ed2337.jar" />
     </item>
 
 </items>

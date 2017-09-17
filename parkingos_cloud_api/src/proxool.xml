@@ -3,11 +3,11 @@
   
   <proxool>
 		<alias>dbconfig</alias>
-		<driver-url>jdbc:postgresql://zlddb.tq.cn:54320/zldetc</driver-url>
+		<driver-url>jdbc:postgresql://192.168.1.5:9632/zldetc</driver-url>
 		<driver-class>org.postgresql.Driver</driver-class>
 		<driver-properties>
 			<property name="user" value="postgres" />
-			<property name="password" value="tracq123" />
+			<property name="password" value="8mwsK8YOTN6gNj2w" />
 		</driver-properties>
 		<maximum-connection-count>100</maximum-connection-count>
 		<minimum-connection-count>10</minimum-connection-count>
@@ -18,11 +18,11 @@
 	</proxool>
  	<proxool>
 		<alias>onlyread</alias>
-		<driver-url>jdbc:postgresql://zlddb_standby.tq.cn:54320/zldetc</driver-url>
+		<driver-url>jdbc:postgresql://192.168.1.5:9632/zldetc</driver-url>
 		<driver-class>org.postgresql.Driver</driver-class>
 		<driver-properties>
 			<property name="user" value="postgres" />
-			<property name="password" value="tracq123" />
+			<property name="password" value="8mwsK8YOTN6gNj2w" />
 		</driver-properties>
 		<maximum-connection-count>100</maximum-connection-count>
 		<minimum-connection-count>10</minimum-connection-count>
