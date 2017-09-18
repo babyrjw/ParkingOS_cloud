@@ -464,8 +464,8 @@ public class SyntheticTestAction extends Action {
 	private String getPda(HttpServletRequest request) {
 		
 		String sql = "SELECT ui.id, ui.nickname, ui.phone, ul.is_onseat, ul.ctime, ul.lat, ul.lon,ul.ctime"+ 
-						" from user_info_tb as ui left join user_local_tb as ul on ui.id = ul.uid"+
-						" where ui.cityid = ? and ui.auth_flag = "+Constants.AUTH_FLAG_COLLECTOR+
+						" from user_info_tb as ui left join org_group_tb as g on ui.groupid=g.id left join user_local_tb as ul on ui.id = ul.uid"+
+						" where g.cityid = ? and ui.auth_flag = "+Constants.AUTH_FLAG_COLLECTOR+
 						" and (ul.ctime = (select max(ult.ctime) from user_local_tb as ult where ult.uid = ui.id) or ul.ctime is null)";
 		Long Cityid = (Long)request.getSession().getAttribute("cityid");
 		long time = System.currentTimeMillis()/1000 - 30*60;
@@ -495,7 +495,7 @@ public class SyntheticTestAction extends Action {
 					}
 					ArrayList<Object> param = new ArrayList<Object>();
 					param.add(workRecord.getBerthsec_id());
-					berthes = onlyReadService.getAllMap("select cid,berthsec_name from com_park_tb left join com_berthsecs_tb on com_park_tb.berthsec_id = com_berthsecs_tb.id  where berthseg_id = ? order by cid desc", param);
+					berthes = onlyReadService.getAllMap("select cid,berthsec_name from com_park_tb left join com_berthsecs_tb on com_park_tb.berthsec_id = com_berthsecs_tb.id  where berthsec_id = ? order by cid desc", param);
 					
 				}
 				

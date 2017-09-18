@@ -59,7 +59,7 @@
 			 <list>
 			 	<bean class="java.net.InetSocketAddress">
 					 <constructor-arg>
-						<value>10.47.213.187</value>
+						<value>192.168.1.5</value>
 					</constructor-arg>
 					<constructor-arg>
 						<value>11211</value>
