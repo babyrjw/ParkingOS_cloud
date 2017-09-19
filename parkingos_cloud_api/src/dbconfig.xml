@@ -67,7 +67,7 @@
 			 <list>
 				<bean class="java.net.InetSocketAddress">
 					 <constructor-arg>
-						<value>memcached.tq.cn</value>
+						<value>192.168.1.5</value>
 					</constructor-arg>
 					<constructor-arg>
 						<value>11211</value>

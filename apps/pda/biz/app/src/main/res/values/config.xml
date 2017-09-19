@@ -8,6 +8,6 @@
     <string name="rule">http://s.tingchebao.com/zld/lalarule.jsp</string>
 
     <!--<string name="updataurl">http://d.tingchebao.com/update/parkuser/update.xml</string>-->
-    <string name="updataurl">http://d.tingchebao.com/update/parkusertest/update.xml</string>
+    <string name="updataurl">http://119.4.225.126:4001/zld/parkuser/update.xml</string>
 
 </resources>

@@ -772,11 +772,11 @@ public class LeaveActivity extends BaseActivity implements OnClickListener, MsgT
             SharedPreferencesUtils utils = SharedPreferencesUtils.getIntance(this);
             if (!TextUtils.isEmpty(qrcodeurl)) {
                 createQrcode(baseurl + qrcodeurl);// 动态构建收费员账号相关的二维码；
-                utils.setCode("http://www.tingchebao.com/zld/carservice.do?pid=" + useraccount + "&name="
+                utils.setCode("http://119.4.225.126:4001/zld/carservice.do?pid=" + useraccount + "&name="
                         + (name != null ? name : ""));
             } else {
                 createQrcode(baseurl + "carservice.do?pid=" + useraccount + "&name=" + (name != null ? name : ""));// 动态构建收费员账号相关的二维码；
-                utils.setCode("http://www.tingchebao.com/zld/carservice.do?pid=" + useraccount + "&name="
+                utils.setCode("http://119.4.225.126:4001/zld/carservice.do?pid=" + useraccount + "&name="
                         + (name != null ? name : ""));
             }
         }
