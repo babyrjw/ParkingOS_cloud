@@ -7,15 +7,15 @@ import com.zhenlaidian.util.SharedPreferencesUtils;
 public class Config {
 
 	
-	public static String onlineurl = "http://s.tingchebao.com/zld/";
-	public static String onlinemserver= "http://s.tingchebao.com/mserver/";
+	public static String onlineurl = "http://119.4.225.126:4001/zld/";
+	public static String onlinemserver= "http://119.4.225.126:5001/mserver/";
 	//	http://180.150.188.224:8080/zld/ 线上测试服测试环境；
 	
 	public static  String getUrl(Context context){
 		SharedPreferencesUtils utils = SharedPreferencesUtils.getIntance(context);
 		String url = utils.getUrl();
 		if (url.equals("1")) {
-			onlineurl = "http://s.tingchebao.com/zld/";
+			onlineurl = "http://119.4.225.126:4001/zld/";
 //			onlineurl = "http://219.159.88.139/zld/";
 //			onlineurl = "http://192.168.0.188/zld/";
 //			onlineurl = "http://yxiudongyeahnet.vicp.cc:50803/zld/";
@@ -27,16 +27,16 @@ public class Config {
 //			onlineurl = "http://192.168.1.229:80/zld/";
 		}else if (url.equals("2")) {
 //			onlineurl = "http://192.168.199.240/zld/";
-			onlineurl = "http://yxiudongyeahnet.vicp.cc/zld/";
+			onlineurl = "http://119.4.225.126:4001/zld/";
 		}else if(url.equals("3")) {
 			//王
-			onlineurl = "http://192.168.199.239:80/zld/";
+			onlineurl = "http://119.4.225.126:4001/zld/";
 		}else if(url.equals("4")) {
 			//戴
-			onlineurl = "http://192.168.199.153:8088/zld/";
+			onlineurl = "http://119.4.225.126:4001/zld/";
 		}else if(url.equals("5")) {
 			//onlineurl = "http://180.150.188.224:8080/zld/";
-			onlineurl = "http://123.56.195.194:4001/zld/";
+			onlineurl = "http://119.4.225.126:4001/zld/";
 		}
 		return onlineurl;
 	}
@@ -45,7 +45,7 @@ public class Config {
 		SharedPreferencesUtils utils = SharedPreferencesUtils.getIntance(context);
 		String url = utils.getUrl();
 		if (url.equals("1")) {
-			onlinemserver = "http://s.tingchebao.com/mserver/";
+			onlinemserver = "http://119.4.225.126:5001/mserver/";
 //			onlinemserver = "http://219.159.88.139/mserver/";
 //			onlinemserver = "http://192.168.0.188/mserver/";
 //			onlinemserver = "http://yxiudongyeahnet.vicp.cc:50803/mserver/";
@@ -57,14 +57,14 @@ public class Config {
 //			onlinemserver = "http://192.168.1.229:80/mserver/";
 		}else if (url.equals("2")) {
 //			onlinemserver = "http://192.168.199.240/mserver/";
-			onlineurl = "http://yxiudongyeahnet.vicp.cc/zld/";
+			onlinemserver = "http://119.4.225.126:5001/mserver/";
 		}else if (url.equals("3")) {
-			onlinemserver = "http://192.168.199.239:80/mserver/";
+			onlinemserver = "http://119.4.225.126:5001/mserver/";
 		}else if (url.equals("4")) {
-			onlinemserver = "http://192.168.199.153:8088/mserver/";
+			onlinemserver = "http://119.4.225.126:5001/mserver/";
 		}else if (url.equals("5")) {
 			//onlinemserver = "http://180.150.188.224:8080/mserver/";
-			onlinemserver = "http://123.56.195.194:5001/mserver/";
+			onlinemserver = "http://119.4.225.126:5001/mserver/";
 		}
 		return onlinemserver;
 	}
