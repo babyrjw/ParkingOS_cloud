@@ -28,9 +28,9 @@ public class AuthFilter implements Filter {
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response,
 			FilterChain chain) throws IOException, ServletException {
-		try {
+		/*try {
 			HttpServletRequest httpServletRequest = ((HttpServletRequest) request);
-			String requestUrl = httpServletRequest.getRequestURI().split("/")[2];
+			String requestUrl = httpServletRequest.getRequestURI().split("/")[1];
 			String action = httpServletRequest.getParameter("action");
 			String curl = (action != null)? (requestUrl + "?action=" +action ) : requestUrl;
 			RequestDispatcher dispatcher = request.getRequestDispatcher(failurl);
@@ -125,7 +125,7 @@ public class AuthFilter implements Filter {
 			} 
 		} catch (Exception e) {
 			logger.error("auth check filter exception", e);
-		}
+		}*/
 		chain.doFilter(request, response);
 	}
 

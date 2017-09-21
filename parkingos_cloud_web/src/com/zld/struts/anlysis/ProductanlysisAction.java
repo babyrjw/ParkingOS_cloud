@@ -85,19 +85,19 @@ public class ProductanlysisAction extends Action {
 			Long e = System.currentTimeMillis()/1000;
 			 if(type.equals("tomonth")){
 				b=TimeTools.getMonthStartSeconds();
-				sqlInfo =new SqlInfo(" create_time between ? and ? ",
+				sqlInfo =new SqlInfo(" c.create_time between ? and ? ",
 						new Object[]{b,e});
 			}else if(!btime.equals("")&&!etime.equals("")){
 				b = TimeTools.getLongMilliSecondFrom_HHMMDD(btime)/1000;
 				e =  TimeTools.getLongMilliSecondFrom_HHMMDDHHmmss(etime+" 23:59:59");
-				sqlInfo =new SqlInfo(" create_time between ? and ? ",
+				sqlInfo =new SqlInfo(" c.create_time between ? and ? ",
 						new Object[]{b,e});
 			}
 			sql +=" and "+sqlInfo.getSql();
 			params= sqlInfo.getParams();
 			params.add(0,comid);
 			
-			list = daService.getAllMap(sql +"  order by create_time desc ",params);
+			list = daService.getAllMap(sql +"  order by c.create_time desc ",params);
 			int count = list!=null?list.size():0;
 			
 			//String tc = "0_0_0_0";

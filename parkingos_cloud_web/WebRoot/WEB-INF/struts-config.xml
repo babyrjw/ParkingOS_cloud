@@ -878,12 +878,21 @@
 		<action path="/feebypark" type="org.springframework.web.struts.DelegatingActionProxy">
 			<forward name="list" path="/WEB-INF/pages/anlysis/feebypark.jsp" redirect="false" /> 
         </action>
+		<action path="/feebygroup" type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="list" path="/WEB-INF/pages/anlysis/feebygroup.jsp" redirect="false" />
+		</action>
         <action path="/feebycoll" type="org.springframework.web.struts.DelegatingActionProxy">
 			<forward name="list" path="/WEB-INF/pages/anlysis/feebycoll.jsp" redirect="false" /> 
         </action>
         <action path="/staticfeebycoll" type="org.springframework.web.struts.DelegatingActionProxy">
 			<forward name="list" path="/WEB-INF/pages/anlysis/staticfeebycoll.jsp" redirect="false" /> 
         </action>
+		<action path="/staticfeebygroup" type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="list" path="/WEB-INF/pages/anlysis/staticfeebygroup.jsp" redirect="false" />
+		</action>
+		<action path="/staticfeebypark" type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="list" path="/WEB-INF/pages/anlysis/staticfeebypark.jsp" redirect="false" />
+		</action>
         <action path="/citysensororder" type="org.springframework.web.struts.DelegatingActionProxy">
 			<forward name="list" path="/WEB-INF/pages/city/citysensororderlist.jsp" redirect="false" /> 
         </action>
@@ -924,6 +933,9 @@
         <action path="/cheatsensor" type="org.springframework.web.struts.DelegatingActionProxy">
 			<forward name="list" path="/WEB-INF/pages/zld/cheatSensor.jsp" redirect="false" />
         </action>
+		<action path="/worktime" type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="list" path="/WEB-INF/pages/city/worktime.jsp" redirect="false" />
+		</action>
 	</action-mappings>
 </struts-config>
 
